@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 2.8.10)
 cmake_policy(SET CMP0003 NEW)
+cmake_policy(SET CMP0043 OLD)
+if (POLICY CMP0025)
+  cmake_policy(SET CMP0025 NEW)
+endif()
 set(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS true)
 
 include(FindPkgConfig)
