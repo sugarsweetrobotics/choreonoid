@@ -55,7 +55,7 @@ public:
        are checked if they are still used or not, and the unused resources are released
        when finalizeRendering() is called. The default value is true.
     */
-    void enableUnusedResourceCheck(bool on);
+    void enableUnusedResourceCheck(bool on) override;
 
     virtual bool isPicking() const override;
     virtual void setColor(const Vector3f& color) override;
