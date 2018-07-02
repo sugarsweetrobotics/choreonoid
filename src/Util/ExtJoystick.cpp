@@ -3,6 +3,7 @@
 */
 
 #include "ExtJoystick.h"
+#include <string>
 #include <map>
 #include <functional>
 
