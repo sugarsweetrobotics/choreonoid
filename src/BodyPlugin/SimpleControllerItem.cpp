@@ -114,8 +114,8 @@ public:
     virtual std::ostream& os() const override;
     virtual double timeStep() const override;
     virtual double currentTime() const override;
-    virtual bool isNoDelayMode() const;
-    virtual bool setNoDelayMode(bool on);
+    virtual bool isNoDelayMode() const override;
+    virtual bool setNoDelayMode(bool on) override;
 
     // virtual functions of SimpleControllerIO
     virtual void enableIO(Link* link) override;
