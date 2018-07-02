@@ -10,7 +10,12 @@
 #ifdef _WIN32
 #include <windows.h>
 #endif
+
+#if defined(__APPLE__)
+#include <OpenGL/gl.h>
+#else // defined(__APPLE__)
 #include <GL/gl.h>
+#endif // defined(__APPLE__)
 
 using namespace std;
 using namespace cnoid;
@@ -173,6 +178,12 @@ double GLSceneRenderer::aspectRatio() const
 bool GLSceneRenderer::initializeGL()
 {
 #ifndef _WIN32
+
+
+#if defined(__APPLE__)
+    ostream& os = mvout();
+    os << "OpenGL version is " << glGetString(GL_VERSION) << endl;
+#else // defined(__APPLE__)
     ostream& os = mvout();
     GLint major, minor;
     glGetIntegerv(GL_MAJOR_VERSION, &major);
@@ -181,6 +192,7 @@ bool GLSceneRenderer::initializeGL()
     if(major >= 2){
         os << (boost::format("GLSL version is %1%.") % glGetString(GL_SHADING_LANGUAGE_VERSION)) << endl;
     }
+#endif // defined(__APPLE__)
 #endif
     return true;
 }

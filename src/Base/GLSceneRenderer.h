@@ -26,7 +26,7 @@ public:
     virtual SgGroup* scene() override;
 
     virtual bool initializeGL();
-    virtual void flush() = 0;
+    virtual void flush() override = 0;
 
     // The following functions cannot be called bofore calling the initializeGL() function.
     bool setSwapInterval(int interval);
