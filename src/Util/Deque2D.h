@@ -96,6 +96,20 @@ public:
         }
     };
 
+    /**
+     * operator-
+     * 
+     * This function gives '-' oerator for Deque2D::const_iterator class objects.
+     * @param end Deque2D::const_iterator class object
+     * @param start Deque2D::const_iterator class object
+     * @return difference of index count. Can be negative if the first argument's index is smaller than the second one's.
+     */
+    friend int operator-(const Deque2DType::const_iterator& end, const Deque2DType::const_iterator& start) {
+      return end.current - start.current;
+    }
+
+      
+
     class iterator : public const_iterator {
 
         friend class Deque2D<ElementType, Allocator>;
