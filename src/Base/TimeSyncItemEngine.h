@@ -7,6 +7,7 @@
 #define CNOID_BASE_TIME_SYNC_ITEM_ENGINE_H
 
 #include <cnoid/Referenced>
+#include <string>
 #include <functional>
 #include "exportdecl.h"
 
