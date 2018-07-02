@@ -70,7 +70,8 @@ if(CMAKE_SYSTEM_NAME STREQUAL Linux)
 elseif(WIN32)
   set(sources ${sources} JoystickWindows.cpp)
 elseif(APPLE)
-  set(sources ${sources} JoystickOSX.cpp ysjoyreader-objc.m)
+  set(sources ${sources} JoystickOSX.cpp)
+  add_subdirectory(ysjoyreader-objc)  
 endif()
 
 set(headers
@@ -171,7 +172,7 @@ if(UNIX)
     m)
 
   if(APPLE)
-    target_link_libraries(${target} ${libraries} "-framework IOKit -framework Foundation")
+    target_link_libraries(${target} ${libraries} ysjoyreader "-framework IOKit -framework Foundation")
   else()
     target_link_libraries(${target} ${libraries})
   endif()
