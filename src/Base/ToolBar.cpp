@@ -11,8 +11,8 @@
 #include <QMouseEvent>
 
 #ifdef Q_OS_MAC
-#include <QCleanlooksStyle>
-#include <QMacStyle>
+// #include <QCleanlooksStyle>
+// #include <QMacStyle>
 #endif
 
 using namespace std;
@@ -22,7 +22,7 @@ using namespace cnoid;
 namespace {
 
 #ifdef Q_OS_MAC
-QCleanlooksStyle cleanlooks;
+  // QCleanlooksStyle cleanlooks;
 #endif
 
 class ToolBarHandle : public QWidget
@@ -141,9 +141,9 @@ ToolButton* ToolBar::addButton(const QString& text, const QString& tooltip)
     ToolButton* button = new ToolButton(this);
 #ifdef Q_OS_MAC
     // Force auto-raize type
-    if(dynamic_cast<QMacStyle*>(button->style())){
-        button->setStyle(&cleanlooks);
-    }
+    // if(dynamic_cast<QMacStyle*>(button->style())){
+    // button->setStyle(&cleanlooks);
+    // }
 #endif
     button->setText(text);
     button->setAutoRaise(true);
@@ -161,9 +161,9 @@ ToolButton* ToolBar::addButton(const QIcon& icon, const QString& tooltip)
     ToolButton* button = new ToolButton(this);
 #ifdef Q_OS_MAC
     // Force auto-raize type
-    if(dynamic_cast<QMacStyle*>(button->style())){
-        button->setStyle(&cleanlooks);
-    }
+    // if(dynamic_cast<QMacStyle*>(button->style())){
+    // button->setStyle(&cleanlooks);
+    // }
 #endif
     button->setIconSize(mainWindow->iconSize());
     button->setIcon(icon);
