@@ -50,13 +50,13 @@ public:
         }
     }
 
-    virtual AbstractSeqPtr cloneSeq() const {
+    virtual AbstractSeqPtr cloneSeq() const override {
         return std::make_shared<SeqType>(*this);
     }
         
     virtual ~Seq() { }
         
-    virtual double getFrameRate() const {
+    virtual double getFrameRate() const override {
         return frameRate_;
     }
 
@@ -64,11 +64,11 @@ public:
         return frameRate_;
     }
 
-    virtual void setFrameRate(double frameRate) {
+    virtual void setFrameRate(double frameRate) override {
         frameRate_ = frameRate;
     }
 
-    virtual int getNumFrames() const {
+    virtual int getNumFrames() const override {
         return container.size();
     }
 
@@ -76,7 +76,7 @@ public:
         return container.size();
     }
 
-    virtual void setNumFrames(int n, bool clearNewElements = false) {
+    virtual void setNumFrames(int n, bool clearNewElements = false) override {
         if(clearNewElements){
             container.resize(n, defaultValue());
         } else {
