@@ -55,7 +55,7 @@ public:
         setActivationPriority(0);
     }
 
-    virtual bool initialize()
+    virtual bool initialize() override
     {
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0) && CNOID_ENABLE_GETTEXT
