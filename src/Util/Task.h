@@ -8,6 +8,7 @@
 
 #include <cnoid/Referenced>
 #include <cnoid/Signal>
+#include <string>
 #include <functional>
 #include <vector>
 #include "exportdecl.h"
