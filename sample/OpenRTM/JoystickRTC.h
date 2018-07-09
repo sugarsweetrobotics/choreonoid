@@ -15,6 +15,7 @@
 #include <rtm/DataOutPort.h>
 #include <cnoid/Joystick>
 
+#include <math.h>
 /*!
  * @class JoystickRTC
  * @brief Access a joystick control device.
